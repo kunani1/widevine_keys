@@ -1,7 +1,7 @@
 import requests, xmltodict
 
 def get_pssh(mpd_url):
-    pssh = ''
+    pssh = 'AAAAIHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAAA='
     try:
         r = requests.get(url=mpd_url)
         r.raise_for_status()
