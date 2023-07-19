@@ -1,4 +1,4 @@
-import requests, xmltodict, json
+import requests, xmltodict
 
 def get_pssh(mpd_url):
     pssh = ''
@@ -6,7 +6,7 @@ def get_pssh(mpd_url):
         r = requests.get(url=mpd_url)
         r.raise_for_status()
         xml = xmltodict.parse(r.text)
-        mpd = json.loads(json.dumps(xml))
+        mpd = xml
         periods = mpd['MPD']['Period']
     except Exception as e:
         pssh = input(f'\nUnable to find PSSH in MPD: {e}. \nEdit getPSSH.py or enter PSSH manually: ')
